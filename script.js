@@ -97,3 +97,20 @@ function generatePassword() {
     else if (confirmUppercase) {
         choices = space.concat(alpha2);
     };
+
+    for (var i = 0; i < enter; i++) {
+        var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+        password.push(pickChoices);
+    }
+    // This joins the password array and converts it to a string
+    // Worked with a tutor to incorporate this option
+    var ps = password.join("");
+    UserInput(ps);
+    return ps;
+}
+// This puts the password value into the textbox
+// Changed function input to use textcontent
+function UserInput(ps) {
+    document.getElementById("password").textContent = ps;
+
+}
